@@ -1,0 +1,237 @@
+
+
+<style>
+
+body{
+    font-size: 2rem;
+    padding: 1em;
+}
+
+.watercounter{
+    background-color: #BBCDE3;
+    height: 15em;
+    width: 10em;
+}
+
+.row1{
+    padding-bottom: 2.3em;
+    padding-top: .3em;
+    height: 2em;
+    padding-left: 3em;
+}
+
+.row2{
+    padding-bottom: 1em;
+    padding-left: 3em;
+}
+
+.row3{
+    padding-left: 2.5em;
+    padding-bottom: .5em;
+}
+
+.row4{
+    padding-left: 3.2em;
+    padding-bottom: .3em;
+}
+
+.row5{
+    padding-left: 2.7em;
+}
+
+.timer{
+    padding-left: .8em;
+    padding-top: 0em;
+    padding-bottom: .8em;
+    height: 1em;
+    width: 3em;
+    border-style: single;
+    border-radius:8px;
+    background: white;
+}
+
+button{
+    background-color: white;
+}
+
+button:active{
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    background: #2E5481;
+    border: solid 1px #203E5F;
+}
+
+button.droplet{
+    display: block;
+    height: 11em;
+    width: 11em;
+    border-radius: 50%;
+    border: 1px solid;
+}
+
+button.clear{
+  border-radius: 30px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #DD514C;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+}
+
+.clear:active{
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    background: #2E5481;
+    border: solid 1px #203E5F;
+}
+
+button.save{
+  border-radius: 30px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #ACCB12;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+}
+
+.save:active{
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    background: #2E5481;
+    border: solid 1px #203E5F;
+}
+
+button.stats{
+  border-radius: 30px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+}
+
+.stats:active{
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    background: #2E5481;
+    border: solid 2px #203E5F;
+}
+
+button.leaderboard{
+  border-radius: 30px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+}
+
+.leaderboard:active{
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    background: #2E5481;
+    border: solid 2px #203E5F;
+}
+button:focus{
+  outline:0;
+}
+
+.dropletimg{
+    height: 80px;
+    width: 100px;
+    padding-right: 2px;
+}
+
+</style>
+
+
+<!DOCTYPE html>
+<html>
+
+
+<script>
+var startTimer;
+var isRunning = false;
+var seconds = 0;
+var minutes = 0;
+var minText = "00";
+var secText = "00";
+
+function startStop(){
+    if (isRunning){
+    clearInterval(startTimer);
+    isRunning = false;
+    }
+    else{
+    startTimer = setInterval(runTimer, 1000);
+    isRunning = true;
+    }
+}
+
+function runTimer(){
+    seconds++;
+    if (seconds > 59)  {
+        seconds = 0;
+        minutes++;}
+    if (seconds < 10){
+        secText = "0" + seconds;}
+    else{
+        secText = seconds;}
+    if (minutes < 10){
+        minText = "0" + minutes;}
+    else{
+        minText = minutes;}
+    document.getElementById('showerTimer').innerHTML = minText + ":" + secText;
+}
+
+function clearTimer(){
+    clearInterval(startTimer);
+    minutes = 0;
+    seconds = 0;
+    document.getElementById('showerTimer').innerHTML = "00:00";}
+
+function saveTime(){
+    clearInterval(startTimer);
+    document.getElementById('showerTimer').innerHTML = "Saved!";
+    setTimeout(clearSave, 3000);
+}
+
+function clearSave(){
+    document.getElementById('showerTimer').innerHTML = minutes + ":" + seconds;
+}
+
+</script>
+<body>
+<div class = "watercounter">
+<div class = "row1">
+    <div class = "timer">
+    <p id = "showerTimer">
+    00:00
+    </p>
+    </div>
+</div>
+    <div class="row2">
+        <button class = "droplet" onclick = "startStop()">
+            <img class = "dropletimg" src="https://raw.githubusercontent.com/nrmulukutla/koolkatz330/master/droplet.png"  alt="water droplet">
+        </button>
+    </div>
+    <div class="row3">
+        <button class="save" onclick = "saveTime()">
+            Save
+        </button>
+        <button class="clear" onclick = "clearTimer()">
+            Clear
+        </button>
+    </div>
+    <div class="row4">
+        <button class="stats">
+            My Stats
+        </button>
+    </div>
+    <div class="row5">
+        <button class="leaderboard">
+            Leaderboard
+        </button>
+    </div>
+</div>
+</body>
+</html>
