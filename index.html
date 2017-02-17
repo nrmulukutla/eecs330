@@ -1,73 +1,56 @@
-
-
 <style>
-
 body{
     font-size: 2rem;
     padding: 1em;
 }
-
 .watercounter{
     background-color: #BBCDE3;
     height: 15em;
     width: 10em;
+    margin: auto;
+    text-align: center;
 }
-
 .row1{
     padding-bottom: 2.3em;
     padding-top: .3em;
     height: 2em;
-    padding-left: 3em;
+    margin: auto;
 }
-
 .row2{
     padding-bottom: 1em;
-    padding-left: 3em;
 }
-
 .row3{
-    padding-left: 2.5em;
     padding-bottom: .5em;
 }
-
 .row4{
-    padding-left: 3.2em;
     padding-bottom: .3em;
 }
 
-.row5{
-    padding-left: 2.7em;
-}
-
 .timer{
-    padding-left: .8em;
-    padding-top: 0em;
-    padding-bottom: .8em;
-    height: 1em;
-    width: 3em;
-    border-style: single;
     border-radius:8px;
     background: white;
+    width: 5em;
+    height: 2em;
+    margin: auto;
+    vertical-align: middle;
 }
 
 button{
     background-color: white;
 }
-
 button:active{
     box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
     background: #2E5481;
     border: solid 1px #203E5F;
 }
-
 button.droplet{
     display: block;
     height: 11em;
     width: 11em;
     border-radius: 50%;
     border: 1px solid;
+    margin: auto;
 }
-
 button.clear{
   border-radius: 30px;
   font-family: Arial;
@@ -77,13 +60,11 @@ button.clear{
   padding: 5px 10px 5px 10px;
   text-decoration: none;
 }
-
 .clear:active{
     box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
     background: #2E5481;
     border: solid 1px #203E5F;
 }
-
 button.save{
   border-radius: 30px;
   font-family: Arial;
@@ -93,13 +74,11 @@ button.save{
   padding: 5px 10px 5px 10px;
   text-decoration: none;
 }
-
 .save:active{
     box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
     background: #2E5481;
     border: solid 1px #203E5F;
 }
-
 button.stats{
   border-radius: 30px;
   font-family: Arial;
@@ -108,14 +87,13 @@ button.stats{
   background: #3498db;
   padding: 5px 10px 5px 10px;
   text-decoration: none;
+  margin: auto;
 }
-
 .stats:active{
     box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
     background: #2E5481;
     border: solid 2px #203E5F;
 }
-
 button.leaderboard{
   border-radius: 30px;
   font-family: Arial;
@@ -124,8 +102,8 @@ button.leaderboard{
   background: #3498db;
   padding: 5px 10px 5px 10px;
   text-decoration: none;
+  margin: auto;
 }
-
 .leaderboard:active{
     box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
     background: #2E5481;
@@ -134,7 +112,6 @@ button.leaderboard{
 button:focus{
   outline:0;
 }
-
 .dropletimg{
     height: 80px;
     width: 100px;
@@ -155,7 +132,6 @@ var seconds = 0;
 var minutes = 0;
 var minText = "00";
 var secText = "00";
-
 function startStop(){
     if (isRunning){
     clearInterval(startTimer);
@@ -166,7 +142,6 @@ function startStop(){
     isRunning = true;
     }
 }
-
 function runTimer(){
     seconds++;
     if (seconds > 59)  {
@@ -196,9 +171,8 @@ function saveTime(){
 }
 
 function clearSave(){
-    document.getElementById('showerTimer').innerHTML = minutes + ":" + seconds;
+    document.getElementById('showerTimer').innerHTML = minText + ":" + secText;
 }
-
 </script>
 <body>
 <div class = "watercounter">
