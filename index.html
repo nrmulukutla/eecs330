@@ -31,7 +31,6 @@ body{
 .row4{
     padding-bottom: .3em;
 }
-
 .timer{
     border-radius:8px;
     background: white;
@@ -40,7 +39,6 @@ body{
     margin: auto;
     vertical-align: middle;
 }
-
 button{
     background-color: white;
 }
@@ -49,7 +47,6 @@ button:active{
     background: #2E5481;
     border: solid 1px #203E5F;
 }
-
 button.droplet{
     display: block;
     height: 11em;
@@ -124,7 +121,6 @@ button:focus{
     width: 100px;
     padding-right: 2px;
 }
-
 .settings{
     height: 1em;
     width: 1em;
@@ -133,6 +129,13 @@ button:focus{
 p{
   padding-top: .45em;
 }
+
+a:link, a:visited{
+    color: inherit;
+    font-style: inherit;
+    text-decoration: none;
+}
+
 </style>
 
 <script>
@@ -167,19 +170,16 @@ function runTimer(){
         minText = minutes;}
     document.getElementById('showerTimer').innerHTML = minText + ":" + secText;
 }
-
 function clearTimer(){
     clearInterval(startTimer);
     minutes = 0;
     seconds = 0;
     document.getElementById('showerTimer').innerHTML = "00:00";}
-
 function saveTime(){
     clearInterval(startTimer);
     document.getElementById('showerTimer').innerHTML = "Saved!";
     setTimeout(clearSave, 3000);
 }
-
 function clearSave(){
     document.getElementById('showerTimer').innerHTML = minText + ":" + secText;
 }
@@ -188,7 +188,9 @@ function clearSave(){
 <body>
 <div class = "watercounter">
 <div class = "row0">
+    <a href="settings.html">
     <img class = "settings" src = "https://github.com/nrmulukutla/koolkatz330/blob/master/gear.png?raw=true" align = "right">
+    </a>
 </div>
 <div class = "row1">
     <div class = "timer">
@@ -217,7 +219,7 @@ function clearSave(){
     </div>
     <div class="row5">
         <button class="leaderboard">
-            Leaderboard
+            <a href="leaderboard.html">Leaderboard</a>
         </button>
     </div>
 </div>
