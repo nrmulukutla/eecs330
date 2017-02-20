@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+body{
+    font-size: 2rem;
+    padding: 1em;
+}
+.watercounter{
+    background-color: #BBCDE3;
+    height: 16em;
+    width: 10em;
+    margin: auto;
+    text-align: center;
+}
+h1{
+	font-size: 2rem; 
+}
+p{
+	font-size: 1.2rem;
+}
+
+</style>
+<script>
+	var showerGoal;
+	var waterPressure;
+
+</script>
+<body>
+<div class = "watercounter">
+	<div class = "buttons">
+	</div>
+	<div>
+		<h1> SETTINGS </h1>
+	</div>
+	<div>
+		<p> Update Goal:
+		<form>
+			<select name="showerGoal">
+				<option value = 1>1 min</option>
+				<option value = 2>2 mins</option>
+				<option value = 3>3 mins</option>
+				<option value = 4>4 mins</option>
+				<option value = 5>5 mins</option>
+				<option value = 6>6 mins</option>
+				<option value = 7>7 mins</option>
+				<option value = 8>8 mins</option>
+				<option value = 9>9 mins</option>
+				<option value = 10>10 mins</option>
+				<option value = 11>11 mins</option>
+				<option value = 12>12 mins</option>
+				<option value = 13>13 mins</option>
+				<option value = 14>14 mins</option>
+				<option value = 15>15 mins</option>
+			</select>
+			</form>
+		</p>
+	</div>
+	<div>
+		<p>Update Water Pressure:</p>
+	</div>
+	<div>
+		<p> Connect to Facebook:</p>
+	</div>
+</div>
+</body>
+</html>
