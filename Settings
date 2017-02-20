@@ -18,49 +18,81 @@ h1{
 }
 p{
 	font-size: 1.2rem;
+
+}
+.LogOut{
+	display: none;
 }
 
 </style>
 <script>
 	var showerGoal;
 	var waterPressure;
+	var loggedIn = false;
+
+function connectToFacebook(){
+	loggedIn = true;
+	document.getElementById('LogIn').style.display = "none";
+	document.getElementById('LogOut').style.display = "block";
+}
+
+function disconnect(){
+	loggedIn = false;
+	document.getElementById('LogIn').style.display = "block";
+	document.getElementById('LogOut').style.display = "none";
+}
 
 </script>
 <body>
 <div class = "watercounter">
 	<div class = "buttons">
 	</div>
-	<div>
+	<div id = "heading">
 		<h1> SETTINGS </h1>
 	</div>
 	<div>
-		<p> Update Goal:
-		<form>
-			<select name="showerGoal">
-				<option value = 1>1 min</option>
-				<option value = 2>2 mins</option>
-				<option value = 3>3 mins</option>
-				<option value = 4>4 mins</option>
-				<option value = 5>5 mins</option>
-				<option value = 6>6 mins</option>
-				<option value = 7>7 mins</option>
-				<option value = 8>8 mins</option>
-				<option value = 9>9 mins</option>
-				<option value = 10>10 mins</option>
-				<option value = 11>11 mins</option>
-				<option value = 12>12 mins</option>
-				<option value = 13>13 mins</option>
-				<option value = 14>14 mins</option>
-				<option value = 15>15 mins</option>
-			</select>
-			</form>
-		</p>
+		<p> Update Goal: </p>
+		<select name="showerGoal">
+			<option value = 1>1 min</option>
+			<option value = 2>2 mins</option>
+			<option value = 3>3 mins</option>
+			<option value = 4>4 mins</option>
+			<option value = 5>5 mins</option>
+			<option value = 6>6 mins</option>
+			<option value = 7>7 mins</option>
+			<option value = 8>8 mins</option>
+			<option value = 9>9 mins</option>
+			<option value = 10>10 mins</option>
+			<option value = 11>11 mins</option>
+			<option value = 12>12 mins</option>
+			<option value = 13>13 mins</option>
+			<option value = 14>14 mins</option>
+			<option value = 15>15 mins</option>
+		</select>
 	</div>
 	<div>
 		<p>Update Water Pressure:</p>
+		<select name="waterPressure">
+			<option value = .75>.75 gpm</option>
+			<option value = 1>1 gpm</option>
+			<option value = 1.5>1.5 gpm</option>
+			<option value = 1.75>1.75 gpm</option>
+			<option value = 2>2 gpm</option>
+			<option value = 2.5>2.5 gpm</option>
+		</select>
 	</div>
-	<div>
+	<div id = "LogIn">
 		<p> Connect to Facebook:</p>
+			<label>Username: </label>
+			<input type = "text" id = "username">
+			<br>
+			<label>Password: </label>
+			<input type = "text" id = "password">
+			<br>
+			<button onclick = "connectToFacebook()"> Submit </button>
+	</div>
+	<div id = "LogOut" class = "LogOut">
+		<button onclick = "disconnect()"> Log Out </button>
 	</div>
 </div>
 </body>
