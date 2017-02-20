@@ -6,6 +6,9 @@ body{
     font-size: 2rem;
     padding: 1em;
 }
+.row0{
+    padding: .7em;
+}
 .watercounter{
     background-color: #BBCDE3;
     height: 16em;
@@ -16,12 +19,56 @@ body{
 h1{
 	font-size: 2rem; 
 }
+.heading{
+    padding-left: .5em;
+    padding-right: .5em;
+}
 p{
+    font-family: "Arial", sans-serif; 
 	font-size: 1.2rem;
-
+    padding-top: .45em;
 }
 .LogOut{
 	display: none;
+}
+.back{
+    height: 1.3em;
+}
+label{
+    font-size: 1rem; 
+    font-family: "Arial", sans-serif; 
+}
+#goalupdate{
+    float: left;
+    margin-left: 1em;
+    margin-right: .5em;
+    margin-top: .1em; 
+    margin-bottom: 1em;
+}
+#showerGoal{
+    float: right; 
+    padding-left: 1em;
+    padding-right: .5em;
+    padding-top: .01em; 
+    padding-bottom: .05em;
+}
+#pressureupdate{
+    float: left;
+    margin-left: 1em;
+    margin-right: .5em;
+    margin-top: .05em; 
+    margin-bottom: .05em;
+}
+#waterPressure{
+    float: right; 
+    padding-left: 1em;
+    padding-right: .5em;
+    padding-top: .05em; 
+    padding-bottom: .05em;
+}
+#LogIn{
+    margin-top: 3em;
+    margin-bottom: .5em;
 }
 
 </style>
@@ -45,14 +92,19 @@ function disconnect(){
 </script>
 <body>
 <div class = "watercounter">
+    <div class = "row0">
+    <a href="index.html">
+        <img class = "back" src = "https://github.com/nrmulukutla/koolkatz330/blob/master/green-back-button-icon-65921.png?raw=true" align="left">
+    </a>
+    </div>
 	<div class = "buttons">
 	</div>
 	<div id = "heading">
 		<h1> SETTINGS </h1>
 	</div>
 	<div>
-		<p> Update Goal: </p>
-		<select name="showerGoal">
+		<p id="goalupdate"> Update Goal: </p>
+		<select id="showerGoal">
 			<option value = 1>1 min</option>
 			<option value = 2>2 mins</option>
 			<option value = 3>3 mins</option>
@@ -71,8 +123,8 @@ function disconnect(){
 		</select>
 	</div>
 	<div>
-		<p>Update Water Pressure:</p>
-		<select name="waterPressure">
+		<p id="pressureupdate">Update Water Pressure:</p>
+		<select id="waterPressure">
 			<option value = .75>.75 gpm</option>
 			<option value = 1>1 gpm</option>
 			<option value = 1.5>1.5 gpm</option>
