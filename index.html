@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+
 <style>
 body{
     font-size: 2rem;
@@ -5,10 +8,13 @@ body{
 }
 .watercounter{
     background-color: #BBCDE3;
-    height: 15em;
+    height: 16em;
     width: 10em;
     margin: auto;
     text-align: center;
+}
+.row0{
+    padding-top: .5em;
 }
 .row1{
     padding-bottom: 2.3em;
@@ -43,6 +49,7 @@ button:active{
     background: #2E5481;
     border: solid 1px #203E5F;
 }
+
 button.droplet{
     display: block;
     height: 11em;
@@ -118,12 +125,15 @@ button:focus{
     padding-right: 2px;
 }
 
+.settings{
+    height: 1em;
+    width: 1em;
+    padding-right: .5em;
+}
+p{
+  padding-top: .45em;
+}
 </style>
-
-
-<!DOCTYPE html>
-<html>
-
 
 <script>
 var startTimer;
@@ -174,8 +184,12 @@ function clearSave(){
     document.getElementById('showerTimer').innerHTML = minText + ":" + secText;
 }
 </script>
+
 <body>
 <div class = "watercounter">
+<div class = "row0">
+    <img class = "settings" src = "https://github.com/nrmulukutla/koolkatz330/blob/master/gear.png?raw=true" align = "right">
+</div>
 <div class = "row1">
     <div class = "timer">
     <p id = "showerTimer">
