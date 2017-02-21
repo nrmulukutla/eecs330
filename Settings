@@ -7,7 +7,7 @@ body{
     padding: 1em;
 }
 .row0{
-    padding: .7em;
+    padding: 1em;
 }
 .watercounter{
     background-color: #BBCDE3;
@@ -15,60 +15,40 @@ body{
     width: 10em;
     margin: auto;
     text-align: center;
+    font-family: Arial;
 }
 h1{
-	font-size: 2rem; 
+	padding-top: 3em;
+	font-size: 1rem; 
 }
 .heading{
     padding-left: .5em;
     padding-right: .5em;
 }
 p{
-    font-family: "Arial", sans-serif; 
-	font-size: 1.2rem;
-    padding-top: .45em;
+    font-family: Arial; 
+	font-size: 1rem;
 }
 .LogOut{
 	display: none;
 }
 .back{
-    height: 1.3em;
+    height: 1.5em;
 }
 label{
     font-size: 1rem; 
     font-family: "Arial", sans-serif; 
 }
-#goalupdate{
+.goalUpdate{
     float: left;
-    margin-left: 1em;
-    margin-right: .5em;
-    margin-top: .1em; 
-    margin-bottom: 1em;
+    width: 4em;
+    padding-bottom: 2em;
 }
-#showerGoal{
-    float: right; 
-    padding-left: 1em;
-    padding-right: .5em;
-    padding-top: .01em; 
-    padding-bottom: .05em;
-}
-#pressureupdate{
-    float: left;
-    margin-left: 1em;
-    margin-right: .5em;
-    margin-top: .05em; 
-    margin-bottom: .05em;
-}
-#waterPressure{
-    float: right; 
-    padding-left: 1em;
-    padding-right: .5em;
-    padding-top: .05em; 
-    padding-bottom: .05em;
-}
-#LogIn{
-    margin-top: 3em;
-    margin-bottom: .5em;
+
+.waterPressure{
+	float: right;
+	width: 4em;
+	padding-bottom: 2em;
 }
 
 </style>
@@ -96,14 +76,12 @@ function disconnect(){
     <a href="index.html">
         <img class = "back" src = "https://github.com/nrmulukutla/koolkatz330/blob/master/green-back-button-icon-65921.png?raw=true" align="left">
     </a>
-    </div>
-	<div class = "buttons">
-	</div>
 	<div id = "heading">
-		<h1> SETTINGS </h1>
+		<h1> Settings </h1>
 	</div>
-	<div>
-		<p id="goalupdate"> Update Goal: </p>
+
+	<div class = "goalUpdate">
+		<p class = "goalUpdateText"> Update Time Goal: </p>
 		<select id="showerGoal">
 			<option value = 1>1 min</option>
 			<option value = 2>2 mins</option>
@@ -122,9 +100,9 @@ function disconnect(){
 			<option value = 15>15 mins</option>
 		</select>
 	</div>
-	<div>
-		<p id="pressureupdate">Update Water Pressure:</p>
-		<select id="waterPressure">
+	<div class = "waterPressure">
+		<p class="waterPressureText">Update Water Pressure:</p>
+		<select id="updateWaterPressure">
 			<option value = .75>.75 gpm</option>
 			<option value = 1>1 gpm</option>
 			<option value = 1.5>1.5 gpm</option>
@@ -134,7 +112,7 @@ function disconnect(){
 		</select>
 	</div>
 	<div id = "LogIn">
-		<p> Connect to Facebook:</p>
+		<h1> Connect to Facebook:</h1>
 			<label>Username: </label>
 			<input type = "text" id = "username">
 			<br>
@@ -144,6 +122,7 @@ function disconnect(){
 			<button onclick = "connectToFacebook()"> Submit </button>
 	</div>
 	<div id = "LogOut" class = "LogOut">
+		<h1> Connect Successful </h1>
 		<button onclick = "disconnect()"> Log Out </button>
 	</div>
 </div>
