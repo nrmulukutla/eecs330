@@ -37,7 +37,7 @@ p{
 }
 label{
     font-size: 1rem; 
-    font-family: "Arial", sans-serif; 
+    font-family: "Arial", sans-serif;
 }
 .goalUpdate{
     float: left;
@@ -51,24 +51,12 @@ label{
 	padding-bottom: 2em;
 }
 
+.username{
+	margin-right: .52em;
+}
+
 </style>
-<script>
-	var showerGoal;
-	var waterPressure;
-	var loggedIn = false;
-
-function connectToFacebook(){
-	loggedIn = true;
-	document.getElementById('LogIn').style.display = "none";
-	document.getElementById('LogOut').style.display = "block";
-}
-
-function disconnect(){
-	loggedIn = false;
-	document.getElementById('LogIn').style.display = "block";
-	document.getElementById('LogOut').style.display = "none";
-}
-
+<script src="script.js">
 </script>
 <body>
 <div class = "watercounter">
@@ -114,7 +102,7 @@ function disconnect(){
 	<div id = "LogIn">
 		<h1> Connect to Facebook:</h1>
 			<label>Username: </label>
-			<input type = "text" id = "username">
+			<input type = "text" id = "username" class = "username">
 			<br>
 			<label>Password: </label>
 			<input type = "text" id = "password">
