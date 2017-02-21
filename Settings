@@ -6,113 +6,176 @@ body{
     font-size: 2rem;
     padding: 1em;
 }
-.row0{
-    padding: 1em;
-}
 .watercounter{
     background-color: #BBCDE3;
     height: 16em;
     width: 10em;
     margin: auto;
     text-align: center;
-    font-family: Arial;
 }
-h1{
-	padding-top: 3em;
-	font-size: 1rem; 
+.row0{
+    padding-top: .5em;
 }
-.heading{
-    padding-left: .5em;
+.row1{
+    padding-bottom: 2.3em;
+    padding-top: .3em;
+    height: 2em;
+    margin: auto;
+}
+.row2{
+    padding-bottom: 1em;
+}
+.row3{
+    padding-bottom: .5em;
+}
+.row4{
+    padding-bottom: .3em;
+}
+.timer{
+    border-radius:8px;
+    background: white;
+    width: 5em;
+    height: 2em;
+    margin: auto;
+    vertical-align: middle;
+}
+button{
+    background-color: white;
+}
+button:active{
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    background: #2E5481;
+    border: solid 1px #203E5F;
+}
+button.droplet{
+    display: block;
+    height: 11em;
+    width: 11em;
+    border-radius: 50%;
+    border: 1px solid;
+    margin: auto;
+}
+button.clear{
+  border-radius: 30px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #DD514C;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+}
+.clear:active{
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    background: #2E5481;
+    border: solid 1px #203E5F;
+}
+button.save{
+  border-radius: 30px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #ACCB12;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+}
+.save:active{
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    background: #2E5481;
+    border: solid 1px #203E5F;
+}
+button.stats{
+  border-radius: 30px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+  margin: auto;
+}
+.stats:active{
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    background: #2E5481;
+    border: solid 2px #203E5F;
+}
+button.leaderboard{
+  border-radius: 30px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+  margin: auto;
+}
+.leaderboard:active{
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    background: #2E5481;
+    border: solid 2px #203E5F;
+}
+button:focus{
+  outline:0;
+}
+.dropletimg{
+    height: 80px;
+    width: 100px;
+    padding-right: 2px;
+}
+.settings{
+    height: 1em;
+    width: 1em;
     padding-right: .5em;
 }
 p{
-    font-family: Arial; 
-	font-size: 1rem;
+  padding-top: .45em;
 }
-.LogOut{
-	display: none;
+a:link, a:visited{
+    color: inherit;
+    font-style: inherit;
+    text-decoration: none;
 }
-.back{
-    height: 1.5em;
-}
-label{
-    font-size: 1rem; 
-    font-family: "Arial", sans-serif;
-}
-.goalUpdate{
-    float: left;
-    width: 4em;
-    padding-bottom: 2em;
-}
-
-.waterPressure{
-	float: right;
-	width: 4em;
-	padding-bottom: 2em;
-}
-
-.username{
-	margin-right: .52em;
-}
-
 </style>
-<script src="script.js">
+
+<script src = "script.js">
 </script>
+
 <body>
 <div class = "watercounter">
-    <div class = "row0">
-    <a href="index.html">
-        <img class = "back" src = "https://github.com/nrmulukutla/koolkatz330/blob/master/green-back-button-icon-65921.png?raw=true" align="left">
+<div class = "row0">
+    <a href="settings.html">
+    <img class = "settings" src = "https://github.com/nrmulukutla/koolkatz330/blob/master/gear.png?raw=true" align = "right">
     </a>
-	<div id = "heading">
-		<h1> Settings </h1>
-	</div>
-
-	<div class = "goalUpdate">
-		<p class = "goalUpdateText"> Update Time Goal: </p>
-		<select id="showerGoal">
-			<option value = 1>1 min</option>
-			<option value = 2>2 mins</option>
-			<option value = 3>3 mins</option>
-			<option value = 4>4 mins</option>
-			<option value = 5>5 mins</option>
-			<option value = 6>6 mins</option>
-			<option value = 7>7 mins</option>
-			<option value = 8>8 mins</option>
-			<option value = 9>9 mins</option>
-			<option value = 10>10 mins</option>
-			<option value = 11>11 mins</option>
-			<option value = 12>12 mins</option>
-			<option value = 13>13 mins</option>
-			<option value = 14>14 mins</option>
-			<option value = 15>15 mins</option>
-		</select>
-	</div>
-	<div class = "waterPressure">
-		<p class="waterPressureText">Update Water Pressure:</p>
-		<select id="updateWaterPressure">
-			<option value = .75>.75 gpm</option>
-			<option value = 1>1 gpm</option>
-			<option value = 1.5>1.5 gpm</option>
-			<option value = 1.75>1.75 gpm</option>
-			<option value = 2>2 gpm</option>
-			<option value = 2.5>2.5 gpm</option>
-		</select>
-	</div>
-	<div id = "LogIn">
-		<h1> Connect to Facebook:</h1>
-			<label>Username: </label>
-			<input type = "text" id = "username" class = "username">
-			<br>
-			<label>Password: </label>
-			<input type = "text" id = "password">
-			<br>
-			<button onclick = "connectToFacebook()"> Submit </button>
-	</div>
-	<div id = "LogOut" class = "LogOut">
-		<h1> Connect Successful </h1>
-		<button onclick = "disconnect()"> Log Out </button>
-	</div>
+</div>
+<div class = "row1">
+    <div class = "timer">
+    <p id = "showerTimer">
+    00:00
+    </p>
+    </div>
+</div>
+    <div class="row2">
+        <button class = "droplet" onclick = "startStop()">
+            <img class = "dropletimg" src="https://raw.githubusercontent.com/nrmulukutla/koolkatz330/master/droplet.png"  alt="water droplet">
+        </button>
+    </div>
+    <div class="row3">
+        <button class="save" onclick = "saveTime()">
+            Save
+        </button>
+        <button class="clear" onclick = "clearTimer()">
+            Clear
+        </button>
+    </div>
+    <div class="row4">
+        <button class="stats">
+            My Stats
+        </button>
+    </div>
+    <div class="row5">
+        <button class="leaderboard">
+            <a href="leaderboard.html">Leaderboard</a>
+        </button>
+    </div>
 </div>
 </body>
 </html>
