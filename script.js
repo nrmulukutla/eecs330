@@ -89,7 +89,6 @@ function drawChart() {
         ]);
 
     var options = {
-        title: 'Your Progress',
         legend: { position: 'bottom' }
         };
 
