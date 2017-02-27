@@ -21,6 +21,7 @@ h1{
 }
 p{
     font-size: 1rem;
+    padding-top: 0em;
 }
 .row0{
     padding: .5em;
@@ -32,30 +33,47 @@ p{
 .back{
     height: 1.5em;
 }
-
 button{
     background-color: white;
 }
-
 button:active{
     box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
     background: #2E5481;
     border: solid 1px #203E5F;
 }
-
 .leaderboard{
     float:right;
     height: 1.5em;
 }
-
 button:focus{
   outline:0;
 }
-
 a:link, a:visited{
     color: inherit;
     font-style: inherit;
     text-decoration: none;
+}
+
+.row1{
+    padding-top: 1em;
+}
+
+.stat{
+    font-size: 0.5em;
+    float: left;
+}
+
+.quantity{
+    font-size: 0.5em;
+    float: right;
+    padding-left: 2em;
+}
+
+table{
+    margin-left: 1em;
+    margin-top: 1em;
+    background: white;
+    border: 1px solid;
 }
 
 </style>
@@ -69,11 +87,10 @@ a:link, a:visited{
     <img class = "leaderboard" src = "https://github.com/nrmulukutla/koolkatz330/blob/master/green-social-icon.png?raw=true" align = "left">
     </a>
 </div>
-    <div class = "row1" id = "waterChart">
-
+    <div class = "row1">
+        <h1> Your Progress </h1>
     </div>
-    <div class="row2">
-
+    <div class="row2" id = "waterChart" style="width: 80%; height: 40%; margin-left: 1em; border: 1px solid;">
     </div>
     <div class="row3">
         
@@ -82,7 +99,30 @@ a:link, a:visited{
         
     </div>
     <div class="row5">
-        
+    <table>
+        <tbody>
+            <tr>
+                <td class = "stat"> Goal Time: </td>
+                <td class = "quantity"> 5 mins </td>
+            </tr>
+            <tr>
+                <td class = "stat"> Avg. Shower Time: </td>
+                <td class = "quantity"> 4 mins </td>
+            </tr>
+            <tr>
+                <td class = "stat"> Avg. Water Usage: </td>
+                <td class = "quantity"> 10 gallons </td>
+            </tr>
+            <tr>
+                <td class = "stat"> Total Water Used: </td>
+                <td class = "quantity"> 564 gallons </td>
+            </tr>
+            <tr>
+                <td class = "stat"> Total Water Saved: </td>
+                <td class = "quantity"> 120 gallons </td>
+            </tr>
+        </tbody>
+        </table>
     </div>
 </div>
 </body>
