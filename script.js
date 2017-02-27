@@ -64,6 +64,7 @@ google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawChart);
 
 var d = new Date();
+var goalTime = getRandomInt(1,10);
 
 function updateDate (x){
     d.setDate(d.getDate() - x);
@@ -78,7 +79,6 @@ function getRandomInt(min, max){
     } 
 
 function drawChart() {
-    var goalTime = getRandomInt(1,10);
     var data = google.visualization.arrayToDataTable([
         ['Date', 'Goal', 'Time (mins)'],
         [updateDate(4),  goalTime,      getRandomInt(1,15)],
@@ -89,7 +89,7 @@ function drawChart() {
         ]);
 
     var options = {
-        legend: { position: 'bottom' }
+        'legend':'bottom'
         };
 
     var chart = new google.visualization.LineChart(document.getElementById('waterChart'));
