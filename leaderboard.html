@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
-<script src="script.js">
-</script>
+
 <style>
 body{
     font-size: 2rem;
@@ -13,30 +12,32 @@ body{
     width: 10em;
     margin: auto;
     text-align: center;
+    font-family: Arial;
 }
 h1{
 	font-size: 1rem;
-	padding-top: 1em; 
+	padding-top: 1em;
 }
 p{
-	font-size: 1.2rem;
+	font-size: 1rem;
 }
+
 .row0{
 	padding: .5em;
 }
 .row1{
-	padding-top: .5em;
+	padding-top: 1em;
 	font-size: 1em;
 }
+
 .back{
 	height: 1.5em;
 }
+
 .row2{
 	padding-left: 1em;
 }
-.row3{
-    margin-top: 2em;
-}
+
 .ranking{
 	width: 8em;
 	overflow: auto;
@@ -45,30 +46,79 @@ p{
 	border: 1px solid;
 	background-color: white;
 }
+
 .rank{
 	font-size: 0.5em;
 	padding-left: 5.5em;
 }
+
 .person{
 	font-size: 0.5em;
 	padding-left: 1em;
+}
+
+.row3{
+	margin-top: 2em;
+}
+.stats{
+	height: 4em;
+	width: 8em;;
+	border: 1px solid;
+	background-color: white;
+}
+
+.mystats{
+    float:right;
+    height: 1.5em;
+}
+
+button{
+    background-color: white;
+}
+button:active{
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    background: #2E5481;
+    border: solid 1px #203E5F;
+}
+button.stats{
+  border-radius: 30px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 1rem;
+  background: #3498db;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+  margin: auto;
+}
+
+button:focus{
+  outline:0;
+}
+
+a:link, a:visited{
+    color: inherit;
+    font-style: inherit;
+    text-decoration: none;
 }
 
 .facebook{
     height: 1.5em;
     width:5em;
 }
+
 </style>
-<body onload = "updateSocial()">
+<body>
 <div class = "watercounter">
 <div class = "row0">
     <a href="index.html">
     <img class = "back" src = "https://github.com/nrmulukutla/koolkatz330/blob/master/green-back-button-icon-65921.png?raw=true" align = "left">
     </a>
+    <a href="stats.html">
+    <img class = "mystats" src = "https://github.com/nrmulukutla/koolkatz330/blob/master/green-mystats-icon.png?raw=true" align = "left">
+    </a>
 </div>
-    <div class = "leaderboard">
 	<div class = "row1">
-    	<h1> Ranking </h1>
+    	<h1> Ranking Among Friends </h1>
     </div>
     <div class="row2">
         <div class = "ranking">
@@ -135,7 +185,7 @@ p{
         		<td class = "person"> Zack </td>
         	</tr><tr>
         		<td class = "rank"> 17. </td>
-        		<td class = "person"> You </td>
+        		<td class = "person"> Zack </td>
         	</tr>
         	<tr>
         		<td class = "rank"> 18. </td>
@@ -151,12 +201,12 @@ p{
         </tbody>
         </table>
         </div>
-        </div>
     </div>
     <div class="row3">
         <a href = "settings.html">
         <img src="https://www.3dcart.com/blog/wp-content/uploads/2013/10/FB-Connect.jpg" class = "facebook">
         </a>
+        </div>
     </div>
     <div class="row4">
         
