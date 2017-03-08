@@ -6,8 +6,6 @@
 body{
     font-size: 2rem;
     padding: 1em;
-}
-.watercounter{
     background-color: #BBCDE3;
     height: 16em;
     width: 10em;
@@ -15,6 +13,7 @@ body{
     text-align: center;
     font-family: Arial;
 }
+
 h1{
     font-size: 1rem;
     padding-top: 1em;
@@ -22,9 +21,6 @@ h1{
 p{
     font-size: 1rem;
     padding-top: 0em;
-}
-.row0{
-    padding: .5em;
 }
 .row1{
     padding-top: .5em;
@@ -53,29 +49,30 @@ a:link, a:visited{
     font-style: inherit;
     text-decoration: none;
 }
-
 .row1{
     padding-top: 1em;
 }
-
 .stat{
     font-size: 0.5em;
     float: left;
 }
 
+.compare{
+    font-size: 0.5em;
+    text-align: left;
+    padding-bottom: .5em;
+    padding-top: .5em;
+}
 .quantity{
     font-size: 0.5em;
     float: right;
-    padding-left: 2em;
 }
-
 table{
-    margin-left: 1em;
-    margin-top: 1em;
+    margin: auto;
     background: white;
-    border: 1px solid;
+    width: 8em;
+    border: .01em solid;
 }
-
 </style>
 <body>
 <div class = "watercounter">
@@ -90,7 +87,7 @@ table{
     <div class = "row1">
         <h1> Your Progress </h1>
     </div>
-    <div class="row2" id = "waterChart" style="width: 80%; height: 40%; margin-left: 1em; border: 1px solid;">
+    <div class="row2" id = "waterChart" style="width: 8em; height: 6em; margin-left: 1em; border: .01em solid; margin-bottom: 1em;">
     </div>
     <div class="row3">
         
@@ -120,6 +117,11 @@ table{
             <tr>
                 <td class = "stat"> Total Water Saved: </td>
                 <td class = "quantity"> 120 gallons </td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+            <td class = "compare"> You have saved enough water to fill 5.45 kiddie pools. </td>
             </tr>
         </tbody>
         </table>
