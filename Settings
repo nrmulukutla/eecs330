@@ -5,11 +5,6 @@
 body{
     font-size: 2rem;
     padding: 1em;
-}
-.row0{
-    padding: 1em;
-}
-.watercounter{
     background-color: #BBCDE3;
     height: 16em;
     width: 10em;
@@ -21,13 +16,13 @@ h1{
 	padding-top: 3em;
 	font-size: 1rem; 
 }
-.heading{
-    padding-left: .5em;
-    padding-right: .5em;
-}
 p{
     font-family: Arial; 
 	font-size: 1rem;
+}
+.heading{
+	padding-top: .5em;
+	padding-bottom: .3em;
 }
 .LogOut{
 	display: none;
@@ -40,48 +35,27 @@ label{
     font-family: "Arial", sans-serif; 
 }
 .goalUpdate{
-    float: left;
-    width: 4em;
-    padding-bottom: 2em;
+    margin-right: 1.5em;
 }
 
-.waterPressure{
-	float: right;
-	width: 4em;
-	padding-bottom: 2em;
-}
+
 
 </style>
-<script>
-	var showerGoal;
-	var waterPressure;
-	var loggedIn = false;
-
-function connectToFacebook(){
-	loggedIn = true;
-	document.getElementById('LogIn').style.display = "none";
-	document.getElementById('LogOut').style.display = "block";
-}
-
-function disconnect(){
-	loggedIn = false;
-	document.getElementById('LogIn').style.display = "block";
-	document.getElementById('LogOut').style.display = "none";
-}
-
-</script>
+<script src = "script.js"></script>
 <body>
 <div class = "watercounter">
     <div class = "row0">
     <a href="index.html">
         <img class = "back" src = "https://github.com/nrmulukutla/koolkatz330/blob/master/green-back-button-icon-65921.png?raw=true" align="left">
     </a>
-	<div id = "heading">
+    </div>
+
+	<div class = "heading">
 		<h1> Settings </h1>
 	</div>
 
 	<div class = "goalUpdate">
-		<p class = "goalUpdateText"> Update Time Goal: </p>
+		<p class = "goalUpdateText"> Update Time Goal:
 		<select id="showerGoal">
 			<option value = 1>1 min</option>
 			<option value = 2>2 mins</option>
@@ -98,10 +72,10 @@ function disconnect(){
 			<option value = 13>13 mins</option>
 			<option value = 14>14 mins</option>
 			<option value = 15>15 mins</option>
-		</select>
+		</select> </p>
 	</div>
 	<div class = "waterPressure">
-		<p class="waterPressureText">Update Water Pressure:</p>
+		<p class="waterPressureText">Update Water Pressure:
 		<select id="updateWaterPressure">
 			<option value = .75>.75 gpm</option>
 			<option value = 1>1 gpm</option>
@@ -109,7 +83,7 @@ function disconnect(){
 			<option value = 1.75>1.75 gpm</option>
 			<option value = 2>2 gpm</option>
 			<option value = 2.5>2.5 gpm</option>
-		</select>
+		</select> </p>
 	</div>
 	<div id = "LogIn">
 		<h1> Connect to Facebook:</h1>
