@@ -1,37 +1,34 @@
 var startTimer;
 var isRunning = false;
+var centiSec = 0;
 var seconds = 0;
 var minutes = 0;
 var minText = "00";
 var secText = "00";
-
-function connectToFacebook(){
-	document.getElementById('LogIn').style.display = "none";
-	document.getElementById('LogOut').style.display = "block";
-}
-
-function disconnect(){
-	document.getElementById('LogIn').style.display = "block";
-	document.getElementById('LogOut').style.display = "none";
-}
-
-
+var centiText = "00";
 function startStop(){
     if (isRunning){
     clearInterval(startTimer);
     isRunning = false;
     }
     else{
-    startTimer = setInterval(runTimer, 1000);
+    startTimer = setInterval(runTimer, 10);
     isRunning = true;
     }
 }
-
 function runTimer(){
-    seconds++;
+    centiSec++;
+    if (centiSec > 99)  {
+        centiSec = 0;
+        seconds++;}
     if (seconds > 59)  {
         seconds = 0;
         minutes++;}
+    if (centiSec < 10){
+        centiText = "0" + centiSec;}
+    else{
+      centiText = centiSec;
+    }
     if (seconds < 10){
         secText = "0" + seconds;}
     else{
@@ -40,31 +37,38 @@ function runTimer(){
         minText = "0" + minutes;}
     else{
         minText = minutes;}
-    document.getElementById('showerTimer').innerHTML = minText + ":" + secText;
+    document.getElementById('showerTimer').innerHTML = minText + ":" + secText+ ":" + centiText;
 }
-
 function clearTimer(){
     clearInterval(startTimer);
     minutes = 0;
     seconds = 0;
-    document.getElementById('showerTimer').innerHTML = "00:00";
-}
-
+    centiSec = 0;
+    document.getElementById('showerTimer').innerHTML = "00:00:00";}
 function saveTime(){
     clearInterval(startTimer);
     document.getElementById('showerTimer').innerHTML = "Saved!";
-    setTimeout(clearSave, 3000);
+    setTimeout(clearSave, 1000);
+}
+function clearSave(){
+    document.getElementById('showerTimer').innerHTML = minText + ":" + secText + ":" + centiText;
 }
 
-function clearSave(){
-    document.getElementById('showerTimer').innerHTML = minText + ":" + secText;
+function connectToFacebook(){
+    document.getElementById('LogIn').style.display = "none";
+    document.getElementById('LogOut').style.display = "block";
 }
- 
+
+function disconnect(){
+    document.getElementById('LogIn').style.display = "block";
+    document.getElementById('LogOut').style.display = "none";
+}
+
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawChart);
 
 var d = new Date();
-var goalTime = getRandomInt(1,10);
+var goalTime = 5;
 
 function updateDate (x){
     d.setDate(d.getDate() - x);
