@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html>
-
 <style>
 body{
     font-size: 2rem;
     padding: 1em;
-}
-.watercounter{
     background-color: #BBCDE3;
     height: 16em;
     width: 10em;
     margin: auto;
     text-align: center;
 }
-.row0{
-    padding-top: .5em;
-}
+
 .row1{
-    padding-bottom: 2.3em;
-    padding-top: .3em;
+    padding-bottom: 1.5em;
     height: 2em;
     margin: auto;
 }
@@ -38,6 +32,8 @@ body{
     height: 2em;
     margin: auto;
     vertical-align: middle;
+    box-shadow: 0em .1em .2em gray inset,
+        0em .1em .1em white;
 }
 button{
     background-color: white;
@@ -54,6 +50,8 @@ button.droplet{
     border-radius: 50%;
     border: 1px solid;
     margin: auto;
+    box-shadow: .1em .1em .3em white inset,
+              -.1em -.1em .3em gray inset;
 }
 button.clear{
   border-radius: 30px;
@@ -124,78 +122,30 @@ button:focus{
 .settings{
     height: 1em;
     width: 1em;
-    padding-right: .5em;
+    margin-left: 6.5em;
 }
 p{
   padding-top: .45em;
 }
-
 a:link, a:visited{
     color: inherit;
     font-style: inherit;
     text-decoration: none;
 }
-
 </style>
-
-<script>
-var startTimer;
-var isRunning = false;
-var seconds = 0;
-var minutes = 0;
-var minText = "00";
-var secText = "00";
-function startStop(){
-    if (isRunning){
-    clearInterval(startTimer);
-    isRunning = false;
-    }
-    else{
-    startTimer = setInterval(runTimer, 1000);
-    isRunning = true;
-    }
-}
-function runTimer(){
-    seconds++;
-    if (seconds > 59)  {
-        seconds = 0;
-        minutes++;}
-    if (seconds < 10){
-        secText = "0" + seconds;}
-    else{
-        secText = seconds;}
-    if (minutes < 10){
-        minText = "0" + minutes;}
-    else{
-        minText = minutes;}
-    document.getElementById('showerTimer').innerHTML = minText + ":" + secText;
-}
-function clearTimer(){
-    clearInterval(startTimer);
-    minutes = 0;
-    seconds = 0;
-    document.getElementById('showerTimer').innerHTML = "00:00";}
-function saveTime(){
-    clearInterval(startTimer);
-    document.getElementById('showerTimer').innerHTML = "Saved!";
-    setTimeout(clearSave, 3000);
-}
-function clearSave(){
-    document.getElementById('showerTimer').innerHTML = minText + ":" + secText;
-}
-</script>
+<script src = "script.js"></script>
 
 <body>
 <div class = "watercounter">
 <div class = "row0">
     <a href="settings.html">
-    <img class = "settings" src = "https://github.com/nrmulukutla/koolkatz330/blob/master/gear.png?raw=true" align = "right">
+    <img class = "settings" src = "https://github.com/nrmulukutla/koolkatz330/blob/master/gear.png?raw=true">
     </a>
 </div>
 <div class = "row1">
     <div class = "timer">
     <p id = "showerTimer">
-    00:00
+    00:00:00
     </p>
     </div>
 </div>
